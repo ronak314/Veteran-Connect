@@ -1,0 +1,113 @@
+[
+    {
+      "name": "Fayetteville VA Medical Center",
+      "latitude": 36.0812937047043,
+      "longitude": -94.160064191272
+    },
+    {
+      "name": "Fort Smith VA Clinic",
+      "latitude": 35.37163839644118,
+      "longitude": -94.4173834872976
+    },
+    {
+      "name": "Ozark VA Clinic",
+      "latitude": 35.48939537008436,
+      "longitude": -93.8548170400186
+    },
+    {
+      "name": "Harrison VA Clinic",
+      "latitude": 36.29903929516748,
+      "longitude": -93.12225526185665
+    },
+    {
+      "name": "Mountain Home VA Clinic",
+      "latitude": 36.34860618822127,
+      "longitude": -92.37634119494213
+    },
+    {
+      "name": "Conway VA Clinic",
+      "latitude": 35.06853527105739,
+      "longitude": -92.40587224868702
+    },
+    {
+      "name": "Hot Springs VA Clinic",
+      "latitude": 34.48890713326216,
+      "longitude": -93.03890114499491
+    },
+    {
+      "name": "Texarkana VA Clinic",
+      "latitude": 33.474695636010225,
+      "longitude": -94.07078464486287
+    },
+    {
+      "name": "Mena VA Clinic",
+      "latitude": 34.584452001367595,
+      "longitude": -94.22187201801009
+    },
+    {
+      "name": "Central Arkansas Veterans Healthcare System",
+      "latitude": 34.77273513743477,
+      "longitude": -92.31265241034339
+    },
+    {
+      "name": "John L. McClellan Memorial Veterans Hospital",
+      "latitude": 34.746620918002655, 
+      "longitude": -92.32035208546105
+    },
+    {
+      "name": "North Little Rock VA Medical Center",
+      "latitude":34.77507047324269,
+      "longitude": -92.29600388825473
+    },
+    {
+      "name": "Jay VA Clinic",
+      "latitude": 36.4348379010849,
+      "longitude": -94.78343913076075
+    },
+    {
+      "name": "Searcy VA Clinic",
+      "latitude": 35.23517916815724, 
+      "longitude": -91.7320446873015
+    },
+    {
+      "name": "El Dorado VA Clinic",
+      "latitude": 33.229044397672645, 
+      "longitude": -92.66768050443812
+    },
+    {
+      "name": "Pine Bluff VA Clinic",
+      "latitude": 34.21267480569292, 
+      "longitude": -91.9707776450025
+    },
+    {
+      "name": "Springfield VA Clinic",
+      "latitude": 39.7160214172092, 
+      "longitude": -89.63892113134834
+    },
+    {
+      "name": "Joplin VA Clinic",
+      "latitude": 37.05642438953416, 
+      "longitude": -94.49418697797802
+    },
+    {
+      "name": "Muskogee VA Medical Center",
+      "latitude": 35.77096496678171, 
+      "longitude": -95.33665442961362
+    },
+    {
+      "name": "Tulsa VA Clinic",
+      "latitude": 36.149415128452034, 
+      "longitude": -95.86217339098354
+    },
+    {
+      "name": "Township VA Clinic",
+      "latitude": 36.09588672367096,
+      "longitude": -94.1551816075071 
+    },
+    {
+      "name": "Vinita VA Clinic",
+      "latitude": 36.631011031318096,
+      "longitude": -95.14485878726126 
+    }
+  ]
+  
