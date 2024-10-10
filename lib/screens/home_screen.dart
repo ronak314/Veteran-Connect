@@ -32,10 +32,10 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start, // Align items to the start
             children: <Widget>[
-              SizedBox(height: 10), // Add space from the top
+              SizedBox(height: 5), // Add space from the top
               Image.asset(
                 'assets/images/homepagestock.png', // Replace with your asset path
-                height: 325,
+                height: 340,
               ),
               SizedBox(height: 20.0), // Space between the image and buttons
               AnimatedPadding(

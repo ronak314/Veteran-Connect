@@ -388,9 +388,20 @@ class ResultsScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  'You could be eligible for the following benefits:',
-                  style: TextStyle(fontSize: 24, color: Colors.white),
+                Text.rich(
+                  TextSpan(
+                    text: 'You ', // Normal text
+                    style: TextStyle(fontSize: 24, color: Colors.white), // Default style
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'may', // Italicized 'may'
+                        style: TextStyle(fontStyle: FontStyle.italic), // Italics style
+                      ),
+                      TextSpan(
+                        text: ' be eligible for the following benefits:', // Rest of the text
+                      ),
+                    ],
+                  ),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 20),

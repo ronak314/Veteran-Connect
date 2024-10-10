@@ -110,11 +110,9 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
     return 'Address not found';
   }
 
-  Future<void> openMaps(String address) async {
-    // Encode the address for the URL
-    String encodedAddress = Uri.encodeComponent(address);
-    // Create a Google Maps URL with the encoded address
-    String googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=$encodedAddress';
+  Future<void> openMaps(double latitude, double longitude) async {
+    // Create a Google Maps URL with the coordinates
+    String googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
     
     if (await canLaunch(googleMapsUrl)) {
       await launch(googleMapsUrl);
@@ -195,7 +193,7 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
                                   subtitle: Text('${distance.toStringAsFixed(2)} miles away\n$address'), // Display the address in miles
                                   trailing: IconButton(
                                     icon: Icon(Icons.directions),
-                                    onPressed: () => openMaps(address), // Use the pre-calculated address here
+                                    onPressed: () => openMaps(facility.latitude, facility.longitude), // Use the lat and long here
                                   ),
                                 ),
                               );
