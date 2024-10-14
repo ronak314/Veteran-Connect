@@ -6,22 +6,27 @@ import 'dart:convert'; // Import for JSON parsing
 import 'package:flutter/services.dart'; // Import for loading assets
 import 'package:url_launcher/url_launcher.dart'; // Import url_launcher
 
+
 class VAFacility {
   final String name;
   final double latitude;
   final double longitude;
 
+
   VAFacility(this.name, this.latitude, this.longitude);
 }
+
 
 class TelehealthScreen extends StatefulWidget {
   @override
   _TelehealthScreenState createState() => _TelehealthScreenState();
 }
 
+
 class _TelehealthScreenState extends State<TelehealthScreen> {
   Position? _currentPosition;
   List<VAFacility> vaFacilities = [];
+
 
   @override
   void initState() {
@@ -29,6 +34,7 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
     requestLocationPermission();
     loadFacilities(); // Load facilities when initializing the state
   }
+
 
   Future<void> loadFacilities() async {
     String jsonString = await rootBundle.loadString('assets/va_facilities.json'); // Load the JSON file
@@ -41,6 +47,7 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
       )).toList(); // Map JSON data to List<VAFacility>
     });
   }
+
 
   Future<void> requestLocationPermission() async {
     LocationPermission permission = await Geolocator.checkPermission();
@@ -61,6 +68,7 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
     }
   }
 
+
   Future<void> _getCurrentLocation() async {
     try {
       _currentPosition = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
@@ -69,6 +77,7 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
       print('Error getting location: $e');
     }
   }
+
 
   double haversine(double lat1, double lon1, double lat2, double lon2) {
     const R = 3958.8; // Radius of the earth in miles
@@ -80,9 +89,10 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
     return R * c; // Distance in miles
   }
 
+
   List<MapEntry<VAFacility, double>> findNearestFacilities() {
     if (_currentPosition == null) return [];
-    
+  
     List<MapEntry<VAFacility, double>> distances = vaFacilities.map((facility) {
       double distance = haversine(
         _currentPosition!.latitude,
@@ -93,9 +103,11 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
       return MapEntry(facility, distance);
     }).toList();
 
+
     distances.sort((a, b) => a.value.compareTo(b.value)); // Sort by distance
     return distances.take(5).toList(); // Get top 5 nearest facilities
   }
+
 
   Future<String> getAddress(double latitude, double longitude) async {
     try {
@@ -110,16 +122,18 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
     return 'Address not found';
   }
 
+
   Future<void> openMaps(double latitude, double longitude) async {
     // Create a Google Maps URL with the coordinates
     String googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
-    
+  
     if (await canLaunch(googleMapsUrl)) {
       await launch(googleMapsUrl);
     } else {
       throw 'Could not open Google Maps';
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -186,6 +200,7 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
                                 facility.longitude,
                               );
 
+
                               return Card(
                                 margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                                 child: ListTile(
@@ -245,3 +260,8 @@ class _TelehealthScreenState extends State<TelehealthScreen> {
     );
   }
 }
+
+
+
+
+
